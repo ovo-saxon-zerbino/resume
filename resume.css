@@ -1,20 +1,47 @@
+/* Page Formatting */
 @page {
     size: A4;
+}
+
+html {
+    font-size: 14px;
 }
 
 h1, h2, h3, h4, h5 {
     page-break-after: avoid;
 }
 
+/* Header Formatting */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 0 4em;
     border-bottom: 2px solid #bbb;
 }
 
+header h1 {
+    font-size: 2em;
+}
+
+header h2 {
+    font-size: 1.5em;
+}
+
+.contact-details p {
+    margin: 0.25em 0;
+    text-align: right;
+}
+
+/* Content Formatting */
 main {
     display: flex;
+    column-gap: 3em;
+}
+
+main h1 {
+    font-size: 1.25em;
 }
 
 section {
