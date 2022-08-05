@@ -3,6 +3,10 @@
     size: A4;
 }
 
+@page :first {
+    @top-right { content: "Last Updated: 05/08/2022" }
+}
+
 html {
     font-size: 14px;
 }
