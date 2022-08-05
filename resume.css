@@ -1,6 +1,10 @@
 @page {
     size: A4;
-  }
+}
+
+h1, h2, h3, h4, h5 {
+    page-break-after: avoid;
+}
 
 header {
     display: flex;
@@ -15,4 +19,9 @@ main {
 
 section {
     border-bottom: 2px solid #bbb;
+    page-break-inside: avoid;
+}
+
+aside section {
+    border-bottom: none;
 }
