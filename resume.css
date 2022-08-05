@@ -1,16 +1,10 @@
 /* Page Formatting */
-@media print {
-    @page { 
-        size: A4;
-        margin: 0; 
-    }
-
-    html {
-        margin: 3em 0 3em 5em;
-    }
+@page { 
+    size: A4;
 }
 
 html {
+    margin: 3em;
     font-size: 14px;
 }
 
