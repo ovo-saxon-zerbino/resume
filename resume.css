@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Header Formatting */
-header {
+.resume-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,11 +21,11 @@ header {
     border-bottom: 2px solid #bbb;
 }
 
-header h1 {
+.resume-header h1 {
     font-size: 2em;
 }
 
-header h2 {
+.resume-header h2 {
     font-size: 1.5em;
 }
 
@@ -51,4 +51,19 @@ section {
 
 aside section {
     border-bottom: none;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 4em 0 2em;
+}
+
+.job-header p {
+    margin: 0.25em 0;
+}
+
+.job-title {
+    font-weight: bold;
 }
