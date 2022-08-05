@@ -1,13 +1,10 @@
 /* Page Formatting */
-@page {
+@page { 
     size: A4;
 }
 
-@page :first {
-    @top-right { content: "Last Updated: 05/08/2022" }
-}
-
 html {
+    margin: 3em;
     font-size: 14px;
 }
 
