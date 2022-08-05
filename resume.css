@@ -67,3 +67,18 @@ aside section {
 .job-title {
     font-weight: bold;
 }
+
+.school-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 4em 0 2em;
+}
+
+.school-header p {
+    margin: 0.25em 0;
+}
+
+.school-title {
+    font-weight: bold;
+}
