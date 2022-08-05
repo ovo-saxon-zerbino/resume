@@ -1,4 +1,88 @@
+/* Page Formatting */
 @page {
     size: A4;
-  }
-  
+}
+
+@page :first {
+    @top-right { content: "Last Updated: 05/08/2022" }
+}
+
+html {
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5 {
+    page-break-after: avoid;
+}
+
+/* Header Formatting */
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 4em;
+    border-bottom: 2px solid #bbb;
+}
+
+.resume-header h1 {
+    font-size: 2em;
+}
+
+.resume-header h2 {
+    font-size: 1.5em;
+}
+
+.contact-details p {
+    margin: 0.25em 0;
+    text-align: right;
+}
+
+/* Content Formatting */
+main {
+    display: flex;
+    column-gap: 3em;
+}
+
+main h1 {
+    font-size: 1.25em;
+}
+
+section {
+    border-bottom: 2px solid #bbb;
+    page-break-inside: avoid;
+}
+
+aside section {
+    border-bottom: none;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 4em 0 2em;
+}
+
+.job-header p {
+    margin: 0.25em 0;
+}
+
+.job-title {
+    font-weight: bold;
+}
+
+.school-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 4em 0 2em;
+}
+
+.school-header p {
+    margin: 0.25em 0;
+}
+
+.school-title {
+    font-weight: bold;
+}
