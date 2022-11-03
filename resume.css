@@ -8,9 +8,10 @@ html {
     font-size: 14px;
 }
 
-h1, h2, h3, h4, h5 {
+/* TODO - Work out why this isn't working as expected */
+/* h1, h2, h3, h4, h5 {
     page-break-after: avoid;
-}
+} */
 
 /* Header Formatting */
 .resume-header {
