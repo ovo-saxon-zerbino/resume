@@ -20,6 +20,9 @@ jobs:
           tag_name: latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       - name: Publish Release
         uses: softprops/action-gh-release@v1
         with:
