@@ -28,3 +28,4 @@ jobs:
         with:
           tag_name: latest
           files: resume.pdf
+          fail_on_unmatched_files: true
