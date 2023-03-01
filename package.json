@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/ovo-saxon-zerbino/resume/issues"
   },
-  "homepage": "https://github.com/ovo-saxon-zerbino/resume#readme"
+  "homepage": "https://github.com/ovo-saxon-zerbino/resume#readme",
+  "devDependencies": {
+    "electron-pdf": "^20.0.0"
+  }
 }
