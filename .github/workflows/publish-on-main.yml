@@ -13,7 +13,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build Resume
-        run: npm run build
+        run: npm run build > resumeTest.pdf
       - name: Update Tag
         uses: richardsimko/update-tag@v1
         with:
@@ -22,7 +22,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: List files in the repository
         run: |
-          ls .
+          ls ${{ github.workspace }}
       - name: Publish Release
         uses: softprops/action-gh-release@v1
         with:
