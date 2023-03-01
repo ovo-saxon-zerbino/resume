@@ -45,8 +45,12 @@ main h1 {
     font-size: 1.25em;
 }
 
-section {
+/* TODO - is there a cleaner way to do this? */
+section:not(.no-line-break) {
     border-bottom: 2px solid #bbb;
+}
+
+section {
     page-break-inside: avoid;
 }
 
