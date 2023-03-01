@@ -16,11 +16,18 @@ jobs:
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
         run: cat Release.txt
-      - name: Build-Resume
+      - name: Build Resume
         run: npm run build
+      - name: Update Tag
+        uses: richardsimko/update-tag@v1
+        with:
+          tag_name: latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: latest
           files: |
             Release.txt
             resume.pdf
