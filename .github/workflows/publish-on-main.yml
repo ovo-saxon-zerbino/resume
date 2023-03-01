@@ -13,7 +13,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build Resume
-        run: npm run build > resumeTest.pdf
+        run: npm run build
       - name: Update Tag
         uses: richardsimko/update-tag@v1
         with:
@@ -23,6 +23,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
       - name: Publish Release
         uses: softprops/action-gh-release@v1
         with:
