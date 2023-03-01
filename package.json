@@ -4,7 +4,7 @@
   "description": "Resume managed in HTML / CSS. Can generate PDF using provided `build.sh` script.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx electron-pdf ${PWD}/resume.html ${PWD}/resume.pdf"
   },
   "repository": {
     "type": "git",
