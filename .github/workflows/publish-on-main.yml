@@ -11,7 +11,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: Install Dependencies
-        run: npm install
+        run: |
+          sudo apt-get install libgtk2.0-0:i386 xvfb
+          export DISPLAY=':99.0'
+          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+          npm install
       - name: Build Resume
         run: npm run build
       - name: Update Tag
