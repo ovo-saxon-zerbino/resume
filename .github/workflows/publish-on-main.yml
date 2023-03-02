@@ -12,12 +12,23 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Dependencies
         run: |
-          sudo apt-get install xvfb
-          export DISPLAY=':99.0'
-          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-          npm install
+          sudo apt install python3-pip libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install weasyprint
+          weasyprint --info
+
+      # sudo apt-get update
+      # sudo apt-get install libnss3 dbus-x11 libgtk-3-common
+      # sudo apt install libgconf2-4
+      # export DISPLAY=':99.0'
+      # Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+      # npm install
+      # Issues seems to be with running electron-pdf in CI - https://github.com/fraserxu/electron-pdf/issues/181
+      # Todo - refactor to use weasyprint (this will need tweaks to CSS)
       - name: Build Resume
-        run: npm run build
+        run: weasyprint ./resume.html ./resume.pdf
+        # run: npm run build
       - name: Update Tag
         uses: richardsimko/update-tag@v1
         with:
