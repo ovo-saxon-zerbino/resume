@@ -16,34 +16,16 @@ jobs:
           source venv/bin/activate
           pip install weasyprint
           weasyprint --info
-
-# sudo apt install python3-pip libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
-
-      # sudo apt-get update
-      # sudo apt-get install libnss3 dbus-x11 libgtk-3-common
-      # sudo apt install libgconf2-4
-      # export DISPLAY=':99.0'
-      # Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-      # npm install
-      # Issues seems to be with running electron-pdf in CI - https://github.com/fraserxu/electron-pdf/issues/181
-      # Todo - refactor to use weasyprint (this will need tweaks to CSS)
       - name: Build Resume
         run: |
           source venv/bin/activate
           weasyprint ./resume.html ./resume.pdf
-
-        # run: npm run build
       - name: Update Tag
         uses: richardsimko/update-tag@v1
         with:
           tag_name: latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
       - name: Publish Release
         uses: softprops/action-gh-release@v1
         with:
