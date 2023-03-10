@@ -1,0 +1,34 @@
+name: Publish Resume as PDF
+run-name: Updating Resume PDF
+on: push
+  push:
+    branches:
+      - 'main'
+jobs:
+  Publish-Release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install weasyprint
+          weasyprint --info
+      - name: Build Resume
+        run: |
+          source venv/bin/activate
+          weasyprint ./resume.html ./resume.pdf
+      - name: Update Tag
+        uses: richardsimko/update-tag@v1
+        with:
+          tag_name: latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: latest
+          files: ./resume.pdf
+          fail_on_unmatched_files: true
