@@ -1,9 +1,9 @@
 name: Publish Resume as PDF
 run-name: Updating Resume PDF
 on: push
-  # push:
-  #   branches:
-  #     - 'main'
+  push:
+    branches:
+      - 'main'
 jobs:
   Publish-Release:
     runs-on: ubuntu-latest
