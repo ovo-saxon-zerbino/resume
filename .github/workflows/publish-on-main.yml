@@ -1,6 +1,6 @@
 name: Publish Resume as PDF
 run-name: Updating Resume PDF
-on: push
+on:
   push:
     branches:
       - 'main'
